@@ -1,0 +1,53 @@
+package structure.implementacion;
+
+import structure.definition.StackADT;
+import java.util.NoSuchElementException;
+
+public class DynamicStackADT implements StackADT {
+
+    private static class Node {
+        int data;
+        Node next;
+
+        Node(int data){
+            this.data = data;
+            this.next = null;
+        }
+    }
+
+    private Node top;
+
+    public DynamicStackADT() {
+        top = null;
+    }
+
+    @Override
+    public int getElement() {
+        if(isEmpty()){
+            throw new NoSuchElementException();
+        }
+
+        return top.data;
+    }
+
+    @Override
+    public void add(int value) {
+        Node node = new Node(value);
+        node.next = top;
+        top = node;
+    }
+
+    @Override
+    public void remove() {
+        if(isEmpty()){
+            throw new NoSuchElementException();}
+
+        top = top.next;
+    }
+
+    @Override
+    public boolean isEmpty() {
+        return top == null;
+    }
+
+}
