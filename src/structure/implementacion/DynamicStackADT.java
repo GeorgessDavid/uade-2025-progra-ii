@@ -1,7 +1,6 @@
 package structure.implementacion;
 
 import structure.definition.StackADT;
-import structure.excepciones.ElementoNoExistenteException;
 import structure.excepciones.EstructuraVaciaException;
 
 import java.util.NoSuchElementException;

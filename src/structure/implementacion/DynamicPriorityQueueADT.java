@@ -3,9 +3,6 @@ package structure.implementacion;
 import structure.definition.PriorityQueueADT;
 import structure.excepciones.EstructuraVaciaException;
 
-import java.util.NoSuchElementException;
-
-//cambiar excepciones
 public class DynamicPriorityQueueADT implements PriorityQueueADT {
 
     private static class Node {

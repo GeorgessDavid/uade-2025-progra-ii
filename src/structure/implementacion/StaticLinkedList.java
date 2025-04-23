@@ -1,6 +1,7 @@
 package structure.implementacion;
 
 import structure.definition.LinkedListADT;
+import structure.excepciones.EstructuraLlenaException;
 import structure.excepciones.IndiceFueraRangoException;
 
 public class StaticLinkedList implements LinkedListADT {
@@ -29,7 +30,7 @@ public class StaticLinkedList implements LinkedListADT {
     @Override
     public void insert(int index, int value) {
         if (index < 0 || index > size) throw new IndiceFueraRangoException(index);
-        if (free == -1) throw new IllegalStateException("No hay espacio disponible");
+        if (free == -1) throw new EstructuraLlenaException();
 
         int newIndex = free;
         free = next[free];

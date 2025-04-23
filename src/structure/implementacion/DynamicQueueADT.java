@@ -3,8 +3,6 @@ package structure.implementacion;
 import structure.definition.QueueADT;
 import structure.excepciones.EstructuraVaciaException;
 
-import java.util.NoSuchElementException;
-
 public class DynamicQueueADT implements QueueADT {
 
     private static class Node {
