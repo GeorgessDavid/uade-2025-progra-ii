@@ -1,6 +1,6 @@
-package org.uade.structure.implementacion;
+package structure.implementacion;
 
-import org.uade.structure.definition.LinkedListADT;
+import structure.definition.LinkedListADT;
 
 public class DynamicLinkedList implements LinkedListADT {
 

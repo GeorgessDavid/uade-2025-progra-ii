@@ -1,4 +1,4 @@
-package org.uade.structure.definition;
+package structure.definition;
 
 // Esta interfaz representa el TDA Pila.
 public interface StackADT {

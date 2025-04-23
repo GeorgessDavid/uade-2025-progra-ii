@@ -1,4 +1,4 @@
-package org.uade.structure.definition;
+package structure.definition;
 
 // Esta interfaz representa el TDA Cola con Prioridad.
 public interface PriorityQueueADT {
