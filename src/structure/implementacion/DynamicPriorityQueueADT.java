@@ -1,6 +1,8 @@
 package structure.implementacion;
 
 import structure.definition.PriorityQueueADT;
+import structure.excepciones.EstructuraVaciaException;
+
 import java.util.NoSuchElementException;
 
 //cambiar excepciones
@@ -43,19 +45,19 @@ public class DynamicPriorityQueueADT implements PriorityQueueADT {
 
     @Override
     public int getElement() {
-        if (isEmpty()) throw new NoSuchElementException("La cola está vacía");
+        if (isEmpty()) throw new EstructuraVaciaException();
         return head.data;
     }
 
     @Override
     public int getPriority() {
-        if (isEmpty()) throw new NoSuchElementException("La cola está vacía");
+        if (isEmpty()) throw new EstructuraVaciaException();
         return head.priority;
     }
 
     @Override
     public void remove() {
-        if (isEmpty()) throw new NoSuchElementException("La cola está vacía");
+        if (isEmpty()) throw new EstructuraVaciaException();
         head = head.next;
     }
 

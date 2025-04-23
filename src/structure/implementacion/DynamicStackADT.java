@@ -1,6 +1,9 @@
 package structure.implementacion;
 
 import structure.definition.StackADT;
+import structure.excepciones.ElementoNoExistenteException;
+import structure.excepciones.EstructuraVaciaException;
+
 import java.util.NoSuchElementException;
 
 public class DynamicStackADT implements StackADT {
@@ -24,7 +27,7 @@ public class DynamicStackADT implements StackADT {
     @Override
     public int getElement() {
         if(isEmpty()){
-            throw new NoSuchElementException();
+            throw new EstructuraVaciaException();
         }
 
         return top.data;
@@ -40,7 +43,7 @@ public class DynamicStackADT implements StackADT {
     @Override
     public void remove() {
         if(isEmpty()){
-            throw new NoSuchElementException();}
+            throw new EstructuraVaciaException();}
 
         top = top.next;
     }

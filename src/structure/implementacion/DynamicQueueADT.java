@@ -1,6 +1,7 @@
 package structure.implementacion;
 
 import structure.definition.QueueADT;
+import structure.excepciones.EstructuraVaciaException;
 
 import java.util.NoSuchElementException;
 
@@ -22,7 +23,7 @@ public class DynamicQueueADT implements QueueADT {
     @Override
     public int getElement() {
         if(isEmpty()){
-            throw new NoSuchElementException();
+            throw new EstructuraVaciaException();
         }
 
         return front.data;
@@ -44,7 +45,7 @@ public class DynamicQueueADT implements QueueADT {
     public void remove() {
         front = front.next;
         if(isEmpty()){
-            throw new NoSuchElementException();}
+            throw new EstructuraVaciaException();}
 
         if(front == null){
             last = null;

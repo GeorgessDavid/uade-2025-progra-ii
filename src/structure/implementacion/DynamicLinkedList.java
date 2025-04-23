@@ -1,6 +1,7 @@
 package structure.implementacion;
 
 import structure.definition.LinkedListADT;
+import structure.excepciones.IndiceFueraRangoException;
 
 public class DynamicLinkedList implements LinkedListADT {
 
@@ -23,7 +24,7 @@ public class DynamicLinkedList implements LinkedListADT {
 
     @Override
     public void insert(int index, int value) {
-        if (index < 0 || index > size) throw new IndexOutOfBoundsException();
+        if (index < 0 || index > size) throw new IndiceFueraRangoException(index);
 
         Node newNode = new Node(value);
         if (index == 0) {
@@ -39,7 +40,7 @@ public class DynamicLinkedList implements LinkedListADT {
 
     @Override
     public void remove(int index) {
-        if (index < 0 || index >= size) throw new IndexOutOfBoundsException();
+        if (index < 0 || index >= size) throw new IndiceFueraRangoException(index);
 
         if (index == 0) {
             head = head.next;
@@ -52,7 +53,7 @@ public class DynamicLinkedList implements LinkedListADT {
 
     @Override
     public int get(int index) {
-        if (index < 0 || index >= size) throw new IndexOutOfBoundsException();
+        if (index < 0 || index >= size) throw new IndiceFueraRangoException(index);
         return getNode(index).data;
     }
 

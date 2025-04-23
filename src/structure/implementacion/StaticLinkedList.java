@@ -1,6 +1,7 @@
-package org.uade.structure.implementacion;
+package structure.implementacion;
 
 import structure.definition.LinkedListADT;
+import structure.excepciones.IndiceFueraRangoException;
 
 public class StaticLinkedList implements LinkedListADT {
 
@@ -27,7 +28,7 @@ public class StaticLinkedList implements LinkedListADT {
 
     @Override
     public void insert(int index, int value) {
-        if (index < 0 || index > size) throw new IndexOutOfBoundsException();
+        if (index < 0 || index > size) throw new IndiceFueraRangoException(index);
         if (free == -1) throw new IllegalStateException("No hay espacio disponible");
 
         int newIndex = free;
@@ -47,7 +48,7 @@ public class StaticLinkedList implements LinkedListADT {
 
     @Override
     public void remove(int index) {
-        if (index < 0 || index >= size) throw new IndexOutOfBoundsException();
+        if (index < 0 || index >= size) throw new IndiceFueraRangoException(index);
 
         int removed;
         if (index == 0) {
@@ -67,7 +68,7 @@ public class StaticLinkedList implements LinkedListADT {
 
     @Override
     public int get(int index) {
-        if (index < 0 || index >= size) throw new IndexOutOfBoundsException();
+        if (index < 0 || index >= size) throw new IndiceFueraRangoException(index);
         int nodeIndex = getIndex(index);
         return data[nodeIndex];
     }
