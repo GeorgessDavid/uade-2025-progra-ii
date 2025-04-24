@@ -9,6 +9,7 @@ import static structure.logica.RegistroPacientes.pacientes;
 public class GestionMedicos {
 
     DynamicLinkedList medicos = new DynamicLinkedList();
+
     int idActual = 0;
 
     public void altaMedico(String nombre, String apellido, String fechaNacimiento) {
@@ -24,8 +25,11 @@ public class GestionMedicos {
         if (medico.isDisponible()) {
             paciente.setMedicoAsignado(medico);
             medico.setDisponible(false);
+            System.out.println("Medico con id" + medico.getId() + " asignado al paciente con id " + paciente.getId());
         }
-
-        System.out.println("Medico con id" + medico.getId() + " asignado al paciente con id " + paciente.getId());
+        else{
+            System.out.println("Medico con id "+medico.getId()+" no esta disponible");
+        }
     }
+
 }
