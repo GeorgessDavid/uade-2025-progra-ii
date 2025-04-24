@@ -23,7 +23,6 @@ public class RegistroPacientes {
         pacientes = new DynamicLinkedList();
         medicos = new DynamicLinkedList();
         idActual = 0;
-        siguienteIdMedico = 0;
     }
 
 
