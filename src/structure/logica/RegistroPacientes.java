@@ -16,26 +16,25 @@ public class RegistroPacientes {
     private DynamicLinkedList pacientes;
     private DynamicLinkedList medicos;
 
-    private int siguienteIdPaciente;
-    private int siguienteIdMedico;
+    private int idActual;
 
     public RegistroPacientes() {
         cola = new DynamicPriorityQueueADT();
         pacientes = new DynamicLinkedList();
         medicos = new DynamicLinkedList();
-        siguienteIdPaciente = 0;
+        idActual = 0;
         siguienteIdMedico = 0;
     }
 
 
     public void registrarPaciente(String nombre, String apellido, String fechaNacimiento, String prioridad) {
-        Paciente paciente = new Paciente(nombre, apellido, fechaNacimiento, siguienteIdPaciente);
+        Paciente paciente = new Paciente(nombre, apellido, fechaNacimiento, idActual);
         pacientes.add(paciente.getId());
 
         int prioridadNumerica = asignarPrioridad(prioridad);
         if(prioridadNumerica != -1){
-            cola.add(siguienteIdPaciente, prioridadNumerica);
-            siguienteIdPaciente++;
+            cola.add(idActual, prioridadNumerica);
+            idActual++;
         } else{
             System.out.println("La prioridad ingresada no es valida. Ejemplos validos: ALTA, MEDIA, BAJA");
         }

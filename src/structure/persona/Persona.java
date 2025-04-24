@@ -18,11 +18,11 @@ public abstract class Persona {
         return nombre;
     }
 
-    public String apellido(){
+    public String getApellido(){
         return apellido;
     }
 
-    public String fechaNacimiento(){
+    public String getFechaNacimiento(){
         return fechaNacimiento;
     }
 
