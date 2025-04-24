@@ -13,15 +13,13 @@ public class RegistroPacientes {
     private final String PRIORIDAD_BAJA = "BAJA";
 
     private DynamicPriorityQueueADT cola;
-    private DynamicLinkedList pacientes;
-    private DynamicLinkedList medicos;
+    public static DynamicLinkedList pacientes;
 
     private int idActual;
 
     public RegistroPacientes() {
         cola = new DynamicPriorityQueueADT();
         pacientes = new DynamicLinkedList();
-        medicos = new DynamicLinkedList();
         idActual = 0;
     }
 
